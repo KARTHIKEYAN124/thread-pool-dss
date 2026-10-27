@@ -1,0 +1,9 @@
+/build*/
+/.tools/
+__pycache__/
+*.pyc
+/.txt
+# Large, reproducible generated datasets and per-task traces stay local.
+/data/generated/
+**/clouds/
+**/details/

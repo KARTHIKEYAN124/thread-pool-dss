@@ -1,0 +1,5 @@
+FROM debian:trixie-slim
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates clang-19 libclang-rt-19-dev libomp-19-dev g++ cmake ninja-build python3 \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /workspace

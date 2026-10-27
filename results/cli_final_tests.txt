@@ -1,0 +1,9 @@
+Test project F:/thread-pool-dss/build
+    Start 2: cli_smoke
+1/2 Test #2: cli_smoke ........................   Passed   21.08 sec
+    Start 3: cli_exports_and_validation
+2/2 Test #3: cli_exports_and_validation .......   Passed    8.16 sec
+
+100% tests passed out of 2
+
+Total Test time (real) =  29.27 sec

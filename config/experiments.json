@@ -1,0 +1,16 @@
+{
+  "tasks": 1200,
+  "seed": 42,
+  "repeats": 3,
+  "warmups": 1,
+  "workers": [1, 2, 4, 8],
+  "scenarios": [
+    {"workload": "light"},
+    {"workload": "mixed"},
+    {"workload": "heavy"},
+    {"workload": "imbalanced"},
+    {"workload": "burst", "mode": "streaming", "tasks": 300},
+    {"workload": "heavy", "lidar_points": 512, "fft_size": 64},
+    {"workload": "heavy", "lidar_points": 3000, "fft_size": 1024}
+  ]
+}

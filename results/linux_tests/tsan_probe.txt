@@ -1,0 +1,24 @@
+==1834==WARNING: invalid path to external symbolizer!
+==1834==WARNING: Failed to use and restart external symbolizer!
+==================
+WARNING: ThreadSanitizer: data race (pid=1834)
+  Write of size 4 at 0x555556a6aae8 by thread T2:
+    #0 <null> <null> (tsan_probe+0xe9ad6) (BuildId: 7ec80291f708ff86c07d2e35df05a896d38797b9)
+    #1 <null> <null> (libstdc++.so.6+0xe1223) (BuildId: 133b71e0013695cc7832680a74edb51008c4fc4c)
+
+  Previous write of size 4 at 0x555556a6aae8 by thread T1:
+    #0 <null> <null> (tsan_probe+0xe9a76) (BuildId: 7ec80291f708ff86c07d2e35df05a896d38797b9)
+    #1 <null> <null> (libstdc++.so.6+0xe1223) (BuildId: 133b71e0013695cc7832680a74edb51008c4fc4c)
+
+  Thread T2 (tid=1837, running) created by main thread at:
+    #0 <null> <null> (tsan_probe+0x63dd5) (BuildId: 7ec80291f708ff86c07d2e35df05a896d38797b9)
+    #1 <null> <null> (libstdc++.so.6+0xe12f8) (BuildId: 133b71e0013695cc7832680a74edb51008c4fc4c)
+    #2 <null> <null> (libc.so.6+0x29ca7) (BuildId: 5e5b51f4c39af9ac589408c1dc432ba390a273cc)
+
+  Thread T1 (tid=1836, finished) created by main thread at:
+    #0 <null> <null> (tsan_probe+0x63dd5) (BuildId: 7ec80291f708ff86c07d2e35df05a896d38797b9)
+    #1 <null> <null> (libstdc++.so.6+0xe12f8) (BuildId: 133b71e0013695cc7832680a74edb51008c4fc4c)
+    #2 <null> <null> (libc.so.6+0x29ca7) (BuildId: 5e5b51f4c39af9ac589408c1dc432ba390a273cc)
+
+SUMMARY: ThreadSanitizer: data race (/tmp/vehicle-tsan/tsan_probe+0xe9ad6) (BuildId: 7ec80291f708ff86c07d2e35df05a896d38797b9) 
+==================

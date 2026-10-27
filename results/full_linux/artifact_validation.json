@@ -1,0 +1,13 @@
+{
+  "matrix_runs": 369,
+  "completed_tasks": 402300,
+  "unique_clouds": 1959,
+  "exported_vertices": 10369430,
+  "voluntary_context_switches": 45357,
+  "involuntary_context_switches": 9963,
+  "missing": 0,
+  "duplicates": 0,
+  "mismatches": 0,
+  "matrix_complete": true,
+  "ply_geometry_verified": true
+}
