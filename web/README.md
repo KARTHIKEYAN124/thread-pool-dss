@@ -1,5 +1,7 @@
 # ThreadPool Lab web explorer
 
+Live production site: https://threadpool-lab.vercel.app
+
 React and Vite dashboard for the C++ vehicle sensor benchmark. Vercel hosts recorded measurements; native C++ execution remains local.
 
 ```sh

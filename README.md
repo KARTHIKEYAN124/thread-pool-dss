@@ -1,5 +1,7 @@
 # Vehicle Sensor Thread-Pool Evaluation
 
+Explore the results on the live [ThreadPool Lab website](https://threadpool-lab.vercel.app). The [web app](web/README.md) supports interactive charts, filters, run details, CSV downloads and local CSV loading. Native benchmark execution remains in the terminal application.
+
 C++20 simulation and reproducible comparison of scheduling strategies for vehicle sensor processing. All schedulers process the same immutable dataset, and every measured output is checked against a serial reference. The application is a terminal program; no hardware is required.
 
 The project includes V0–V4, an OpenMP baseline, an interactive menu, complete PLY point-cloud exports, OS CPU/context-switch profiling and a Linux ThreadSanitizer workflow. Actual measurements, verification logs and limitations are recorded in [the final report](docs/final_report.md). Earlier native Windows validation results remain under `results/csv/`; the larger Linux matrix is stored separately under `results/full_linux/`.
