@@ -1,0 +1,14 @@
+{
+  "linux.csv": {
+    "sha256": "a763171e4234d5b4126db8f7ea7d6b404f981f72e8ed1310dcb49047558b3bbc",
+    "bytes": 101538
+  },
+  "menu.csv": {
+    "sha256": "d603b9f815bccb5b9bc7d40f1ee2bbbd7d496d4b059a1ea022ed42fac5bc4b10",
+    "bytes": 85778
+  },
+  "final_report.md": {
+    "sha256": "9a958685589b7e36da0e2d027375ffbf56debace49fdd9ad33e73e8370db9b20",
+    "bytes": 18524
+  }
+}

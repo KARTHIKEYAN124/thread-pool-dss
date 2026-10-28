@@ -1,0 +1,6 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';import{parseCSV,aggregate,scenarioKey}from'../src/data.mjs';
+const text=readFileSync(new URL('../public/data/linux.csv',import.meta.url),'utf8');
+test('Linux snapshot matches recorded matrix and correctness evidence',()=>{const rows=parseCSV(text);assert.equal(rows.length,369);assert.equal(rows.reduce((s,r)=>s+r.completed,0),402300);assert.equal(rows.reduce((s,r)=>s+r.errors,0),0);});
+test('means exclude invalid outputs and preserve standard deviation',()=>{const values=aggregate([{scheduler:'v3',threads:2,throughput:100,errors:0},{scheduler:'v3',threads:2,throughput:200,errors:0},{scheduler:'v3',threads:2,throughput:900,errors:1}],'throughput');assert.equal(values[0].mean,150);assert.ok(Math.abs(values[0].sd-Math.sqrt(5000))<1e-8);});
+test('incompatible or malformed uploads fail clearly',()=>{assert.throws(()=>parseCSV('foo,bar\n1,2'),/compatible/);assert.throws(()=>parseCSV(text.replace('v0,1,','v0,-1,')),/invalid/);});
+test('configuration isolates seeds and sensor rates',()=>{const r=parseCSV(text)[0];assert.notEqual(scenarioKey(r),scenarioKey({...r,seed:r.seed+1}));assert.notEqual(scenarioKey(r),scenarioKey({...r,can_hz:r.can_hz+1}));});
