@@ -1,5 +1,7 @@
 # Design and interaction verification
 
+Production verification: https://threadpool-lab.vercel.app passed the complete browser interaction suite on 28 October 2026. The production deployment is READY, serves React/Vite assets and both CSV snapshots, and the public domain returned HTTP 200. Build duration was 6 seconds. No runtime error logs were found; this is a static site with no application server or configured external log drains. The deployed application source is commit `ce04abe`; subsequent commits only update documentation and the browser test harness.
+
 The built-in image generation tool produced `concept.png` from a brief for a white, navy and cobalt scientific benchmark dashboard: ThreadPool Lab header, Overview/Explorer/Methodology navigation, "Performance, measured." heading, dataset selector, four summary metrics, filters, line chart, scheduler explanations, and a searchable run table. The screenshot is a visual reference, not a source of numerical data.
 
 The implementation was inspected against that concept using `view_image`, alongside Playwright Chromium screenshots at a 1440 × 1120 desktop viewport and 390 × 844 mobile viewport. Browser tools were unavailable in this session, so Playwright was the browser fallback. Screenshots were generated under ignored `.qa/` and were not included in production assets.

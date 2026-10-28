@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdir,readFile} from 'node:fs/promises';
 const base=process.env.BASE_URL||'http://127.0.0.1:5173';
 await mkdir('.qa',{recursive:true});
-const browser=await chromium.launch({headless:true});
+const browser=await chromium.launch({headless:true,args:JSON.parse(process.env.CHROMIUM_ARGS||'[]')});
 const page=await browser.newPage({viewport:{width:1440,height:1120}});
 page.setDefaultTimeout(60000);
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
